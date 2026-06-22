@@ -13,19 +13,29 @@ import { experience, profile, projects, skills } from '~/data'
         { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
       ]"
     >
+      <template #headline>
+        <UBadge color="success" variant="outline" size="sm" class="gap-1.5 rounded-full">
+          <span class="relative flex size-2">
+            <span class="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
+            <span class="relative inline-flex size-2 rounded-full bg-green-500" />
+          </span>
+          {{ profile.headline }}
+        </UBadge>
+      </template>
+
       <template #title>
         Hey, I'm <span class="text-orange-400 dark:text-orange-300">{{ profile.name }}</span> <span class="inline-block">👋</span>
       </template>
 
       <template #description>
-        {{ profile.role }} based in {{ profile.location }}. {{ profile.bio }}
+        A {{ profile.role }} based in {{ profile.location }}. {{ profile.bio }}
       </template>
 
       <div class="flex justify-center lg:justify-end">
         <div class="relative inline-flex">
           <div
             aria-hidden="true"
-            class="absolute inset-0 -z-10 m-auto size-56 lg:size-72 rounded-full bg-gradient-to-br from-orange-500 via-amber-400 to-orange-300 opacity-40 blur-3xl dark:opacity-50"
+            class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-orange-200 via-amber-100 to-orange-50 opacity-30 blur-[110px] dark:from-orange-900 dark:via-amber-900 dark:to-orange-950 dark:opacity-25"
           />
           <UAvatar
             :src="profile.avatar"
@@ -41,8 +51,9 @@ import { experience, profile, projects, skills } from '~/data'
       id="technologies"
       title="Tech Stack"
       description="Technologies and tools I work with."
+      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
     >
-      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
         <div v-for="group in skills" :key="group.category">
           <h3 class="font-semibold mb-3">
             {{ group.category }}
@@ -65,6 +76,7 @@ import { experience, profile, projects, skills } from '~/data'
       id="experience"
       title="Experience"
       description="My professional journey so far."
+      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
     >
       <UTimeline :items="experience">
         <template #title="{ item }">
@@ -97,6 +109,7 @@ import { experience, profile, projects, skills } from '~/data'
       id="projects"
       title="Projects"
       description="A selection of things I've built."
+      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
     >
       <UPageGrid>
         <UPageCard
@@ -133,7 +146,6 @@ import { experience, profile, projects, skills } from '~/data'
         { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
       ]"
       variant="subtle"
-      class="mb-16"
     />
   </div>
 </template>

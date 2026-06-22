@@ -5,12 +5,11 @@ A personal portfolio template built with [Nuxt 4](https://nuxt.com), [Nuxt UI](h
 ## Quick Start
 
 ```bash
-cp portfolio.config.example.json portfolio.config.json
 pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3000` and start customizing.
+Open `http://localhost:3000` and start customizing. The first `pnpm dev`/`pnpm build` run auto-creates `portfolio.config.json` from `portfolio.config.example.json` if it doesn't exist yet (see `scripts/setup-config.mjs`).
 
 ## Customization
 
@@ -54,6 +53,8 @@ pnpm deploy
 ```
 
 Or connect the repo to Cloudflare Workers Builds for automatic deploys on push. See the [Nuxt deployment docs](https://nuxt.com/docs/getting-started/deployment) for other targets.
+
+Since `portfolio.config.json` is gitignored, Cloudflare's build environment won't have it. Set a `PORTFOLIO_CONFIG` build environment variable in the Cloudflare dashboard (Workers & Pages → your project → Settings → Variables) containing the full JSON content of your `portfolio.config.json`. `scripts/setup-config.mjs` writes it to disk before the build runs. If the variable isn't set, the build falls back to the generic `portfolio.config.example.json` content instead of failing.
 
 ## License
 
