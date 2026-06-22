@@ -3,13 +3,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "build": "node scripts/setup-config.mjs && nuxt build",
+    "dev": "node scripts/setup-config.mjs && nuxt dev",
+    "generate": "node scripts/setup-config.mjs && nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "cf:preview": "nuxt build && wrangler dev",
-    "deploy": "nuxt build && wrangler deploy"
+    "cf:preview": "pnpm build && wrangler dev",
+    "deploy": "pnpm build && wrangler deploy"
   },
   "dependencies": {
     "@nuxt/eslint": "1.16.0",
@@ -41,6 +41,9 @@
     "vue-router": "^5.1.0"
   },
   "devDependencies": {
+    "@iconify-json/devicon": "^1.2.62",
+    "@iconify-json/lucide": "^1.2.114",
+    "@iconify-json/simple-icons": "^1.2.87",
     "wrangler": "^4.103.0"
   }
 }
