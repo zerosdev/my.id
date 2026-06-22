@@ -5,9 +5,18 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
+    '@nuxt/fonts',
     '@nuxt/image',
     '@nuxt/ui'
   ],
+
+  css: ['~/assets/css/main.css'],
+
+  fonts: {
+    families: [
+      { name: 'Geist Mono', provider: 'fontsource' }
+    ]
+  },
 
   nitro: {
     preset: 'cloudflare_module'
