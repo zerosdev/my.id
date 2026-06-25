@@ -6,6 +6,9 @@ export interface Profile {
   bio: string
   avatar: string
   email: string
+  phone?: string
+  whatsapp?: string
+  telegram?: string
   resumeUrl: string
 }
 
@@ -24,6 +27,7 @@ export interface ExperienceItem {
   date: string
   title: string
   company: string
+  location: string
   description: string
   icon: string
   highlights: string[]
@@ -45,4 +49,14 @@ export interface SkillItem {
 export interface SkillGroup {
   category: string
   items: SkillItem[]
+}
+
+export interface UsesItem {
+  type: string
+  name: string
+}
+
+export interface UsesGroup {
+  category: string
+  items: UsesItem[]
 }

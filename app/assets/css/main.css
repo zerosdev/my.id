@@ -5,6 +5,10 @@
   --font-sans: 'Geist Mono', ui-monospace, monospace;
 }
 
+.light {
+  --ui-bg: #f3f4f7;
+}
+
 html {
   scroll-behavior: smooth;
 }

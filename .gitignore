@@ -28,3 +28,9 @@ logs
 
 # Local portfolio content (copy from portfolio.config.example.json)
 portfolio.config.json
+
+# Auto-generated from portfolio.config.json on every dev/build (scripts/generate-resume.mjs)
+public/resume.pdf
+
+# Auto-generated initials favicon (scripts/generate-favicon.mjs)
+public/favicon.ico
