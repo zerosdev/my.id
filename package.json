@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "node scripts/setup-config.mjs && nuxt build",
+    "config:encode": "node scripts/encode-config.mjs",
     "dev": "node scripts/setup-config.mjs && nuxt dev",
     "generate": "node scripts/setup-config.mjs && nuxt generate",
     "preview": "nuxt preview",
