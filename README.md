@@ -54,7 +54,13 @@ pnpm deploy
 
 Or connect the repo to Cloudflare Workers Builds for automatic deploys on push. See the [Nuxt deployment docs](https://nuxt.com/docs/getting-started/deployment) for other targets.
 
-Since `portfolio.config.json` is gitignored, Cloudflare's build environment won't have it. Set a `PORTFOLIO_CONFIG` build environment variable in the Cloudflare dashboard (Workers & Pages → your project → Settings → Variables) containing the full JSON content of your `portfolio.config.json`. `scripts/setup-config.mjs` writes it to disk before the build runs. If the variable isn't set, the build falls back to the generic `portfolio.config.example.json` content instead of failing.
+Since `portfolio.config.json` is gitignored, Cloudflare's build environment won't have it. Cloudflare's dashboard caps plain-text variable values at 5000 characters, which `portfolio.config.json` can exceed (or grow past) once minified, so the value needs to be gzip-compressed first:
+
+```bash
+pnpm config:encode
+```
+
+This prints a base64 string (`scripts/encode-config.mjs` gzips `portfolio.config.json`). Copy it into a `PORTFOLIO_CONFIG_GZIP` build variable in the Cloudflare dashboard (Workers & Pages → your project → Settings → Variables). `scripts/setup-config.mjs` decompresses and writes it to disk before the build runs. A plain (uncompressed) `PORTFOLIO_CONFIG` variable also works if you ever have a small enough config to fit under the limit directly. If neither variable is set, the build falls back to the generic `portfolio.config.example.json` content instead of failing.
 
 ## License
 
