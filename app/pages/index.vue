@@ -5,6 +5,7 @@ import { experience, profile, projects, skills } from '~/data'
 <template>
   <div>
     <UPageHero
+      id="about"
       :headline="profile.headline"
       orientation="horizontal"
       :ui="{ title: 'lg:text-3xl', description: 'sm:text-base' }"
@@ -35,7 +36,7 @@ import { experience, profile, projects, skills } from '~/data'
         <div class="relative inline-flex">
           <div
             aria-hidden="true"
-            class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-orange-200 via-amber-100 to-orange-50 opacity-30 blur-[110px] dark:from-orange-900 dark:via-amber-900 dark:to-orange-950 dark:opacity-25"
+            class="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-tr from-orange-200 via-amber-100 to-orange-50 opacity-50 blur-[110px] dark:from-orange-900 dark:via-amber-900 dark:to-orange-950 dark:opacity-30"
           />
           <UAvatar
             :src="profile.avatar"
@@ -48,7 +49,7 @@ import { experience, profile, projects, skills } from '~/data'
     </UPageHero>
 
     <UPageSection
-      id="technologies"
+      id="tech-stack"
       title="Tech Stack"
       description="Technologies and tools I work with."
       :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
@@ -66,6 +67,7 @@ import { experience, profile, projects, skills } from '~/data'
               :icon="item.icon"
               color="neutral"
               variant="subtle"
+              class="bg-white dark:bg-elevated p-2"
             />
           </div>
         </div>
@@ -86,7 +88,7 @@ import { experience, profile, projects, skills } from '~/data'
         </template>
         <template #description="{ item }">
           <p class="text-sm text-muted">
-            {{ item.company }}
+            {{ item.company }} - {{  item.location  }}
           </p>
           <p class="mt-1 text-sm">
             {{ item.description }}
@@ -139,10 +141,12 @@ import { experience, profile, projects, skills } from '~/data'
 
     <UPageCTA
       id="contact"
-      title="Let's work together"
-      description="I'm currently available for freelance work and new opportunities. Feel free to reach out."
+      title="Let's build something great together!"
+      description="I'm currently available for freelance projects and exciting opportunities. If you have an idea, project, or role in mind, I'd love to hear from you."
       :links="[
-        { label: 'Email Me', to: `mailto:${profile.email}`, icon: 'i-lucide-mail', color: 'neutral' },
+        { to: `mailto:${profile.email}`, icon: 'i-lucide-mail', color: 'neutral' },
+        { to: `https://wa.me/${profile.whatsapp}`, icon: 'i-uil-whatsapp', color: 'neutral' },
+        { to: `https://t.me/${profile.telegram}`, icon: 'i-uil-telegram', color: 'neutral' },
         { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
       ]"
       variant="subtle"

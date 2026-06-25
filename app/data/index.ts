@@ -4,7 +4,8 @@ import type {
   Profile,
   Project,
   SkillGroup,
-  SocialLink
+  SocialLink,
+  UsesGroup
 } from './types'
 import config from '../../portfolio.config.json'
 
@@ -14,3 +15,4 @@ export const navLinks: NavLink[] = config.navLinks
 export const experience: ExperienceItem[] = config.experience
 export const projects: Project[] = config.projects
 export const skills: SkillGroup[] = config.skills
+export const uses: UsesGroup[] = config.uses ?? []

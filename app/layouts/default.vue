@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import { navLinks, profile, social } from '~/data'
 useHead({
-  titleTemplate: (chunk?: string) => (chunk ? `${chunk} - ${profile.name}` : `${profile.name} - ${profile.role}`),
+  titleTemplate: (chunk?: string) => (chunk ? `${chunk} — ${profile.name}` : `${profile.name} — ${profile.role}`),
 })
 
 const initials = computed(() => profile.name
   .split(' ')
   .filter(Boolean)
   .map((word) => word[0])
-  .splice(0, 2)
   .join('')
   .toUpperCase())
 </script>
@@ -60,6 +59,13 @@ const initials = computed(() => profile.name
       </template>
 
       <template #right>
+        <UButton
+          label="Uses"
+          to="/uses"
+          color="neutral"
+          variant="ghost"
+          size="sm"
+        />
         <UButton
           v-for="item in social"
           :key="item.label"
