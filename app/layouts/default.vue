@@ -47,6 +47,7 @@ const initials = computed(() => profile.name
         <UNavigationMenu
           :items="navLinks.map((link) => ({ label: link.label, to: link.to, exactHash: true }))"
           variant="link"
+          class="hidden lg:flex"
           :ui="{ link: 'uppercase text-[.8rem]' }"
         />
         <UColorModeButton />
