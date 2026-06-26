@@ -28,6 +28,7 @@ export interface ExperienceItem {
   title: string
   company: string
   location: string
+  employment_type: string
   description: string
   icon: string
   highlights: string[]
@@ -36,7 +37,7 @@ export interface ExperienceItem {
 export interface Project {
   title: string
   description: string
-  image: string
+  image?: string
   tags: string[]
   link: string
 }

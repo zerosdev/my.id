@@ -41,7 +41,8 @@ const docDefinition = {
     { text: 'Experience', style: 'sectionTitle' },
     ...experience.map((item) => ({
       stack: [
-        { text: `${item.title} — ${item.company} — ${item.location}`, style: 'itemTitle' },
+        { text: `${item.title} — ${item.company}`, style: 'itemTitle' },
+        { text: `${item.location} • ${item.employment_type}`, style: 'itemMeta' },
         { text: item.date, style: 'itemMeta' },
         { text: item.description, margin: [0, 0, 0, 3] },
         ...(item.highlights ?? []).map((highlight) => ({ text: `•  ${highlight}`, style: 'bullet' }))

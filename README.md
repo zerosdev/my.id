@@ -9,7 +9,7 @@ pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3000` and start customizing. The first `pnpm dev`/`pnpm build` run auto-creates `portfolio.config.json` from `portfolio.config.example.json` if it doesn't exist yet (see `scripts/setup-config.mjs`).
+Open `http://localhost:3000` and start customizing. `portfolio.config.json` is committed with real content already, so there's nothing to bootstrap.
 
 ## Customization
 
@@ -17,9 +17,9 @@ Everything you need to make this your own lives in three places:
 
 ### 1. Content — `portfolio.config.json`
 
-All page content (profile, social links, nav, experience, projects, skills) lives in this single JSON file at the project root. It's gitignored — like a `.env` file but for structured content — so your personal data never gets committed and never conflicts when you pull template updates.
+All page content (profile, social links, nav, experience, projects, skills) lives in this single JSON file at the project root. It's committed to the repo, since it's public-facing portfolio content rather than a secret — if you fork this template, just edit it in place with your own data.
 
-Edit `portfolio.config.json` directly (not `portfolio.config.example.json`, which is just the committed template/fallback). The shape of each section is defined in `app/data/types.ts`; `app/data/index.ts` just reads from the config and shouldn't need editing.
+Edit `portfolio.config.json` directly. The shape of each section is defined in `app/data/types.ts`; `app/data/index.ts` just reads from the config and shouldn't need editing.
 
 | Config key   | What it controls                            |
 | ------------ | ------------------------------------------- |
@@ -57,13 +57,7 @@ pnpm deploy
 
 Or connect the repo to Cloudflare Workers Builds for automatic deploys on push. See the [Nuxt deployment docs](https://nuxt.com/docs/getting-started/deployment) for other targets.
 
-Since `portfolio.config.json` is gitignored, Cloudflare's build environment won't have it. Cloudflare's dashboard caps plain-text variable values at 5000 characters, which `portfolio.config.json` can exceed (or grow past) once minified, so the value needs to be gzip-compressed first:
-
-```bash
-pnpm config:encode
-```
-
-This prints a base64 string (`scripts/encode-config.mjs` gzips `portfolio.config.json`). Copy it into a `PORTFOLIO_CONFIG_GZIP` build variable in the Cloudflare dashboard (Workers & Pages → your project → Settings → Variables). `scripts/setup-config.mjs` decompresses and writes it to disk before the build runs. A plain (uncompressed) `PORTFOLIO_CONFIG` variable also works if you ever have a small enough config to fit under the limit directly. If neither variable is set, the build falls back to the generic `portfolio.config.example.json` content instead of failing.
+Since `portfolio.config.json` is committed to the repo, Cloudflare's build environment already has it — no environment variables or build-time encoding needed. Just push to the branch Cloudflare watches and it builds the latest `portfolio.config.json` directly.
 
 ## License
 
