@@ -5,8 +5,22 @@
   --font-sans: 'Geist Mono', ui-monospace, monospace;
 }
 
+.dark {
+  --ui-bg: #0b1322;
+}
+
 .light {
   --ui-bg: #f3f4f7;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+header [data-slot="link"][data-active],
+[data-slot="body"] [data-slot="link"][data-active] {
+  color: var(--color-orange-300);
 }
 
 html {

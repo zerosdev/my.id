@@ -1,0 +1,490 @@
+{
+  "profile": {
+    "name": "Rony Wisnu Wardana",
+    "role": "Full Stack Software Engineer / QA Automation Engineer",
+    "location": "Solo, Indonesia",
+    "headline": "Open to Work",
+    "bio": "8+ years of experience building and maintaining scalable web applications, automation systems, and production infrastructure. Skilled in Laravel, Vue.js, Nuxt.js, TypeScript, and Node.js, with a focus on performance, system reliability, security, and long-term maintainability.",
+    "avatar": "https://avatars.githubusercontent.com/u/33526722?v=4",
+    "email": "ronywisnuwardana@gmail.com",
+    "phone": "+6285338340449",
+    "whatsapp": "+6285338340449",
+    "telegram": "ronywisnuwardana",
+    "resumeUrl": "/resume.pdf"
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "icon": "i-simple-icons-github",
+      "to": "https://github.com/zerosdev"
+    },
+    {
+      "label": "LinkedIn",
+      "icon": "i-simple-icons-linkedin",
+      "to": "https://linkedin.com/in/rony-wisnu-wardana"
+    }
+  ],
+  "experience": [
+    {
+      "date": "Jan 2026 — Now",
+      "title": "Full Stack Developer",
+      "company": "Self Employed",
+      "location": "Indonesia",
+      "employment_type": "Freelance",
+      "description": "Delivered custom full-stack web solutions for clients, including backend development, frontend implementation, API integrations, database design, deployment, and ongoing support.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "Built a PoS app for a restaurant with self-service order",
+        "Maintained client websites, ensuring high availability, reliability, and optimal performance."
+      ]
+    },
+    {
+      "date": "Jul 2025 — Jan 2026",
+      "title": "Full Stack Developer",
+      "company": "SIMETRI",
+      "location": "Karanganyar, Indonesia",
+      "employment_type": "Contract",
+      "description": "Designed and built SIMETRI's e-commerce platform from the ground up as the sole engineer, covering system architecture, backend development, frontend development, database design, third-party integrations, security, testing, and deployment.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "Built SIMETRI's e-commerce platform from scratch using modern full-stack technologies",
+        "Developed RESTful APIs and responsive frontend applications.",
+        "Designed and optimized database architecture for performance and scalability.",
+        "Integrated third-party services including payment gateways, shipping providers, and analytics platforms.",
+        "Implemented authentication, security best practices, and deployment automation.",
+        "Collaborated in agile development workflows to deliver production-ready features."
+      ]
+    },
+    {
+      "date": "Jul 2025 — Jan 2026",
+      "title": "Full Stack Developer",
+      "company": "Coltura.ID",
+      "location": "Karanganyar, Indonesia",
+      "employment_type": "Contract",
+      "description": "Full Stack Developer responsible for developing and maintaining Coltura.id using Laravel 12 and Nuxt 3, integrating third-party payment and logistics services, and optimizing application infrastructure with MariaDB, Redis, and Nginx.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "Developed and launched Coltura.id using Laravel 12 and Nuxt 3, delivering a modern and scalable e-commerce platform.",
+        "Designed and integrated RESTful APIs with payment and shipping providers to support end-to-end business operations.",
+        "Implemented and maintained supporting infrastructure using MariaDB, Redis, and Nginx to ensure performance and reliability.",
+        "Collaborated with stakeholders to translate business requirements into production-ready features."
+      ]
+    },
+    {
+      "date": "Aug 2023 - Aug 2025",
+      "title": "QA Automation Engineer",
+      "company": "payever GmbH",
+      "location": "Hamburg, Germany (Remote)",
+      "employment_type": "Full-Time",
+      "description": "QA Automation Engineer with experience building Selenium-based automation frameworks, implementing E2E/UI/API testing, integrating tests into CI/CD pipelines, and driving software quality through collaboration, defect analysis, and process improvements.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "Built and maintained automated test suites using Selenium WebDriver and TypeScript, improving test coverage and regression testing efficiency.",
+        "Implemented end-to-end, UI, and API automation testing for critical business workflows.",
+        "Integrated automated testing into CI/CD pipelines, enabling faster feedback and more reliable releases.",
+        "Collaborated closely with product managers, developers, and designers to ensure product quality throughout the development lifecycle.",
+        "Enhanced automation framework scalability, maintainability, and performance through code reviews and continuous improvements.",
+        "Identified, tracked, and validated defect resolutions, contributing to overall software stability and quality."
+      ]
+    },
+    {
+      "date": "Mar 2022 - Feb 2023",
+      "title": "Full Stack Developer",
+      "company": "PT. Wendigg Digital Solution",
+      "location": "Ponorogo, Indonesia",
+      "employment_type": "Part-Time",
+      "description": "Led the end-to-end development of a scalable e-commerce platform, from system architecture and implementation to deployment and infrastructure management, while integrating multiple third-party services to support business operations.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "Built Tokowendigg.com from scratch using Laravel 8 (backend) and Vue.js 2 (frontend), delivering a full-featured and scalable e-commerce platform",
+        "Integrated multiple third-party services and APIs, including Digiflazz.com, Moota.co, Cekmutasi.co.id, Bangjeff.com, Gamepoint.club, and VIP-Reseller.co.id for seamless product, transaction, and financial data flow",
+        "Set up and maintained the server infrastructure using Ubuntu 20.04 and aaPanel, ensuring system stability, performance, and security"
+      ]
+    },
+    {
+      "date": "Jan 2017 - May 2023",
+      "title": "Full Stack Developer",
+      "company": "PT Trijaya Digital Grup",
+      "location": "Ngawi, Indonesia",
+      "employment_type": "Full-Time",
+      "description": "Full Stack Developer with 6+ years of experience in web development, backend architecture, infrastructure, and security. Successfully handled critical security incidents, mitigated large-scale DDoS attacks, and contributed to the recovery of production systems serving financial technology operations.",
+      "icon": "i-lucide-briefcase",
+      "highlights": [
+        "6+ years developing and maintaining scalable web applications using Laravel, Vue.js, and Nuxt.js",
+        "Designed and integrated RESTful APIs with banking systems, payment gateways, SMS gateways, and e-KYC providers.",
+        "Improved application performance through database optimization, indexing, and query tuning.",
+        "Managed Linux server infrastructure, security hardening, Cloudflare, DDoS protection, and load balancing.",
+        "Built process automation solutions using Selenium (Python) and Puppeteer (Node.js).",
+        "Developed financial audit and reconciliation systems to ensure transaction accuracy and operational integrity.",
+        "Created reusable internal libraries and tools that improved development efficiency and system scalability.",
+        "Investigated and resolved a critical security incident affecting multiple users, helping prevent potential financial losses worth billions of rupiah.",
+        "Mitigated a large-scale DDoS attack involving millions of requests per second, restoring system stability and service availability.",
+        "Contributed to the recovery of a compromised production database following a security breach, ensuring data integrity and business continuity."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "SIMETRI",
+      "description": "Designed and developed a full-stack e-commerce platform from scratch, providing secure payment processing, shipping integrations, and scalable infrastructure for online business operations.",
+      "tags": [
+        "E-Commerce"
+      ],
+      "link": "https://simetriofficial.com"
+    },
+    {
+      "title": "COLTURA",
+      "description": "Built a modern e-commerce solution using Laravel and Nuxt, integrating third-party payment and logistics services to automate order fulfillment and improve operational efficiency.",
+      "tags": [
+        "E-Commerce"
+      ],
+      "link": "https://coltura.id"
+    },
+    {
+      "title": "TriPay Payment",
+      "description": "Developed and maintained payment infrastructure, transaction auditing systems, and third-party integrations to support secure and reliable financial transactions at scale.",
+      "tags": [
+        "Fintech",
+        "Payment"
+      ],
+      "link": "https://tripay.co.id"
+    },
+    {
+      "title": "P-Store.Net",
+      "description": "Developed a scalable digital marketplace with payment integrations, automated order processing, inventory management, and digital product delivery infrastructure.",
+      "tags": [
+        "E-Commerce"
+      ],
+      "link": "https://p-store.net"
+    },
+    {
+      "title": "TriPay PPOB",
+      "description": "Built and enhanced core features of a PPOB platform that streamlines bill payments and digital product purchases through secure integrations with banks, payment gateways, and service providers.",
+      "tags": [
+        "E-Commerce"
+      ],
+      "link": "https://tripay.id"
+    },
+    {
+      "title": "Cekmutasi (Archived)",
+      "description": "A bank transaction monitoring platform that automates payment verification using unique payment amounts, enabling businesses to confirm bank transfers without manual reconciliation.",
+      "tags": [
+        "Fintech",
+        "Payment"
+      ],
+      "link": "https://cekmutasi.co.id"
+    },
+    {
+      "title": "Tokowendigg",
+      "description": "A digital marketplace that enables users to purchase game credits and vouchers with secure payments, automated fulfillment, and real-time delivery through third-party service integrations.",
+      "tags": [
+        "E-Commerce"
+      ],
+      "link": "https://tokowendigg.com"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        {
+          "name": "HTML",
+          "icon": "i-devicon-html5"
+        },
+        {
+          "name": "CSS",
+          "icon": "i-devicon-css3"
+        },
+        {
+          "name": "Vue",
+          "icon": "i-devicon-vuejs"
+        },
+        {
+          "name": "Nuxt",
+          "icon": "i-devicon-nuxtjs"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "i-devicon-typescript"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "i-devicon-javascript"
+        },
+        {
+          "name": "Bootstrap",
+          "icon": "i-devicon-bootstrap"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "i-devicon-tailwindcss"
+        },
+        {
+          "name": "SCSS",
+          "icon": "i-vscode-icons-file-type-scss"
+        },
+        {
+          "name": "Pinia",
+          "icon": "i-logos-pinia"
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        {
+          "name": "PHP",
+          "icon": "i-devicon-php"
+        },
+        {
+          "name": "Laravel",
+          "icon": "i-devicon-laravel"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "i-devicon-javascript"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "i-devicon-typescript"
+        },
+        {
+          "name": "Node.js",
+          "icon": "i-devicon-nodejs"
+        },
+        {
+          "name": "Express.js",
+          "icon": "i-devicon-express"
+        },
+        {
+          "name": "Python",
+          "icon": "i-devicon-python"
+        },
+        {
+          "name": "Websocket",
+          "icon": "i-logos-websocket"
+        }
+      ]
+    },
+    {
+      "category": "Automation",
+      "items": [
+        {
+          "name": "Selenium",
+          "icon": "i-skill-icons-selenium"
+        },
+        {
+          "name": "Mocha",
+          "icon": "i-devicon-mocha"
+        },
+        {
+          "name": "Chai",
+          "icon": "i-logos-chai"
+        },
+        {
+          "name": "Puppeteer",
+          "icon": "i-devicon-puppeteer"
+        }
+      ]
+    },
+    {
+      "category": "Infrastructure",
+      "items": [
+        {
+          "name": "Nginx",
+          "icon": "i-devicon-nginx"
+        },
+        {
+          "name": "HAProxy",
+          "icon": "i-devicon-haproxy"
+        },
+        {
+          "name": "Ubuntu",
+          "icon": "i-devicon-ubuntu"
+        },
+        {
+          "name": "Docker",
+          "icon": "i-devicon-docker"
+        },
+        {
+          "name": "Cloudflare",
+          "icon": "i-devicon-cloudflare"
+        },
+        {
+          "name": "cPanel",
+          "icon": "i-devicon-cpanel"
+        },
+        {
+          "name": "aaPanel",
+          "icon": "i-logos-aapanel"
+        },
+        {
+          "name": "S3",
+          "icon": "i-devicon-amazonwebservices"
+        },
+        {
+          "name": "RDS",
+          "icon": "i-devicon-amazonwebservices"
+        },
+        {
+          "name": "ECS",
+          "icon": "i-devicon-amazonwebservices"
+        },
+        {
+          "name": "SES",
+          "icon": "i-devicon-amazonwebservices"
+        },
+        {
+          "name": "SQS",
+          "icon": "i-devicon-amazonwebservices"
+        },
+        {
+          "name": "FrankenPHP",
+          "icon": "i-devicon-frankenphp"
+        },
+        {
+          "name": "MariaDB",
+          "icon": "i-devicon-mariadb"
+        },
+        {
+          "name": "MySQL",
+          "icon": "i-devicon-mysql"
+        },
+        {
+          "name": "Redis",
+          "icon": "i-devicon-redis"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "i-devicon-postgresql"
+        },
+        {
+          "name": "Proxmox",
+          "icon": "i-devicon-proxmox-wordmark"
+        }
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        {
+          "name": "VS Code",
+          "icon": "i-devicon-vscode"
+        },
+        {
+          "name": "Git",
+          "icon": "i-devicon-git"
+        },
+        {
+          "name": "Canva",
+          "icon": "i-devicon-canva"
+        },
+        {
+          "name": "Laragon",
+          "icon": "i-simple-icons-laragon"
+        },
+        {
+          "name": "DBeaver",
+          "icon": "i-devicon-dbeaver"
+        },
+        {
+          "name": "Claude",
+          "icon": "i-vscode-icons-file-type-claude"
+        },
+        {
+          "name": "ChatGPT",
+          "icon": "i-arcticons-openai-chatgpt"
+        },
+        {
+          "name": "Jira",
+          "icon": "i-devicon-jira"
+        },
+        {
+          "name": "Trello",
+          "icon": "i-devicon-trello"
+        }
+      ]
+    }
+  ],
+  "uses": [
+    {
+      "category": "Hardware",
+      "items": [
+        {
+          "type": "Laptop",
+          "name": "Macbook Air M1, Asus M409DA"
+        },
+        {
+          "type": "Monitor",
+          "name": "Xiaomi G27i"
+        },
+        {
+          "type": "Keyboard",
+          "name": "Goojodoq Wireless"
+        },
+        {
+          "type": "Mouse",
+          "name": "Goojodoq Wireless"
+        },
+        {
+          "type": "Headphones",
+          "name": "Hoco"
+        },
+        {
+          "type": "Audio",
+          "name": "Integrated Speaker, Maiket Bluetooth Soundbar"
+        },
+        {
+          "type": "Microphones",
+          "name": "Integrated Mic"
+        },
+        {
+          "type": "Webcam",
+          "name": "Integrated Camera"
+        }
+      ]
+    },
+    {
+      "category": "Workspace",
+      "items": [
+        {
+          "type": "Desk",
+          "name": "Homedoki"
+        },
+        {
+          "type": "Chair",
+          "name": "Homedoki"
+        },
+        {
+          "type": "ISP",
+          "name": "Yamnet 50 Mbps"
+        }
+      ]
+    },
+    {
+      "category": "Dev Tools",
+      "items": [
+        {
+          "type": "IDE",
+          "name": "VS Code"
+        },
+        {
+          "type": "Shell",
+          "name": "Git Bash, Zsh"
+        },
+        {
+          "type": "Version Control",
+          "name": "Git"
+        },
+        {
+          "type": "Browser",
+          "name": "Chrome"
+        },
+        {
+          "type": "AI Assisted Coding",
+          "name": "Claude Code, ChatGPT"
+        }
+      ]
+    }
+  ]
+}

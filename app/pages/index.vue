@@ -8,7 +8,7 @@ import { experience, profile, projects, skills } from '~/data'
       id="about"
       :headline="profile.headline"
       orientation="horizontal"
-      :ui="{ title: 'lg:text-3xl', description: 'sm:text-base' }"
+      :ui="{ title: 'text-3xl sm:text-3xl lg:text-3xl', description: 'text-base sm:text-base lg:text-base' }"
       :links="[
         { label: 'View Projects', to: '#projects', color: 'neutral' },
         { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
@@ -25,11 +25,11 @@ import { experience, profile, projects, skills } from '~/data'
       </template>
 
       <template #title>
-        Hey, I'm <span class="text-orange-400 dark:text-orange-300">{{ profile.name }}</span> <span class="inline-block">👋</span>
+        Hey, I'm <span class="text-orange-400 dark:text-orange-300">{{ profile.name }}</span><span class="inline-block">👋</span>
       </template>
 
       <template #description>
-        A {{ profile.role }} based in {{ profile.location }}. {{ profile.bio }}
+        A <span class="text-highlighted">{{ profile.role }}</span> based in <span class="text-highlighted">{{ profile.location }}</span>. {{ profile.bio }}
       </template>
 
       <div class="flex justify-center lg:justify-end">
@@ -49,11 +49,14 @@ import { experience, profile, projects, skills } from '~/data'
     </UPageHero>
 
     <UPageSection
-      id="tech-stack"
-      title="Tech Stack"
-      description="Technologies and tools I work with."
-      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
+      id="skills"
+      title="Skills"
+      description="The technologies, tools, languages, frameworks or libraries I work with. Not a complete list — I'm always open to learn new things"
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'font-light text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
+      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
+        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      </svg>
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
         <div v-for="group in skills" :key="group.category">
           <h3 class="font-semibold mb-3">
@@ -67,7 +70,7 @@ import { experience, profile, projects, skills } from '~/data'
               :icon="item.icon"
               color="neutral"
               variant="subtle"
-              class="bg-white dark:bg-elevated p-2"
+              class="bg-white dark:bg-elevated p-2 rounded-xl"
             />
           </div>
         </div>
@@ -78,19 +81,22 @@ import { experience, profile, projects, skills } from '~/data'
       id="experience"
       title="Experience"
       description="My professional journey so far."
-      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
+      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
+        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      </svg>
       <UTimeline :items="experience">
         <template #title="{ item }">
-          <p class="font-semibold">
+          <p class="font-semibold text-md">
             {{ item.title }}
           </p>
         </template>
         <template #description="{ item }">
-          <p class="text-sm text-muted">
-            {{ item.company }} - {{  item.location  }}
+          <p class="text-sm text-muted mt-1">
+            <span class="text-highlighted">{{ item.company }}</span> &middot; {{  item.location  }} &middot; {{ item.employment_type }}
           </p>
-          <p class="mt-1 text-sm">
+          <p class="mt-3 text-sm">
             {{ item.description }}
           </p>
           <ul v-if="item.highlights?.length" class="mt-3 space-y-1.5">
@@ -111,8 +117,11 @@ import { experience, profile, projects, skills } from '~/data'
       id="projects"
       title="Projects"
       description="A selection of things I've built."
-      :ui="{ title: 'text-left lg:text-3xl', description: 'text-left' }"
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
+      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
+        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
+      </svg>
       <UPageGrid>
         <UPageCard
           v-for="project in projects"
@@ -122,6 +131,7 @@ import { experience, profile, projects, skills } from '~/data'
           :to="project.link"
           target="_blank"
           spotlight
+          :ui="{ title: 'text-black dark:text-white underline decoration-orange-300 underline-offset-4' }"
         >
           <template #footer>
             <div class="flex flex-wrap gap-2">
@@ -138,18 +148,5 @@ import { experience, profile, projects, skills } from '~/data'
         </UPageCard>
       </UPageGrid>
     </UPageSection>
-
-    <UPageCTA
-      id="contact"
-      title="Let's build something great together!"
-      description="I'm currently available for freelance projects and exciting opportunities. If you have an idea, project, or role in mind, I'd love to hear from you."
-      :links="[
-        { to: `mailto:${profile.email}`, icon: 'i-lucide-mail', color: 'neutral' },
-        { to: `https://wa.me/${profile.whatsapp}`, icon: 'i-uil-whatsapp', color: 'neutral' },
-        { to: `https://t.me/${profile.telegram}`, icon: 'i-uil-telegram', color: 'neutral' },
-        { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
-      ]"
-      variant="subtle"
-    />
   </div>
 </template>
