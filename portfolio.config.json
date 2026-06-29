@@ -29,7 +29,7 @@
   ],
   "experience": [
     {
-      "date": "Jan 2026 — Now",
+      "date": "May 2026 — Now",
       "title": "Full Stack Developer",
       "company": "Self Employed",
       "location": "Indonesia",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "date": "Jul 2025 — Jan 2026",
+      "date": "Apr 2026 — May 2026",
       "title": "Full Stack Developer",
       "company": "SIMETRI",
       "location": "Karanganyar, Indonesia",
@@ -116,6 +116,7 @@
         "7+ years developing and maintaining scalable web applications using Laravel, Vue.js, and Nuxt.js",
         "Designed and integrated RESTful APIs with banking systems, payment gateways, SMS gateways, and e-KYC providers.",
         "Improved application performance through database optimization, indexing, and query tuning.",
+        "Led the migration from traditional infrastructure to a scalable architecture",
         "Managed Linux server infrastructure, security hardening, Cloudflare, DDoS protection, and load balancing.",
         "Built process automation solutions using Selenium (Python) and Puppeteer (Node.js).",
         "Developed financial audit and reconciliation systems to ensure transaction accuracy and operational integrity.",
