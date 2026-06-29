@@ -52,6 +52,7 @@
     "@iconify-json/vscode-icons": "^1.2.61",
     "@napi-rs/canvas": "^1.0.1",
     "to-ico": "^1.1.5",
+    "vue-tsc": "^3.3.5",
     "wrangler": "^4.103.0"
   }
 }

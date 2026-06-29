@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { readdirSync, readFileSync, unlinkSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import pdfMake from 'pdfmake'
 import fontsModule from 'pdfmake/standard-fonts/Helvetica.js'
@@ -18,6 +18,13 @@ const contactLine = [profile.email, profile.location, ...social.map((s) => s.to)
 function formatRoles(roles) {
   if (roles.length <= 1) return roles[0] ?? ''
   return `${roles.slice(0, -1).join(', ')} & ${roles[roles.length - 1]}`
+}
+
+function sanitizeFilename(value) {
+  return value
+    .replace(/[<>:"/\\|?*\x00-\x1F]/g, '-')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
 const docDefinition = {
@@ -83,6 +90,12 @@ const docDefinition = {
   ]
 }
 
+const fileName = `${sanitizeFilename(`${profile.name} - ${formatRoles(profile.roles)}`)}.pdf`
+
+for (const entry of readdirSync(`${root}public`)) {
+  if (entry.endsWith('.pdf') && entry !== fileName) unlinkSync(`${root}public/${entry}`)
+}
+
 const pdfDoc = pdfMake.createPdf(docDefinition)
-await pdfDoc.write(`${root}public/resume.pdf`)
-console.log('[generate-resume] wrote public/resume.pdf')
+await pdfDoc.write(`${root}public/${fileName}`)
+console.log(`[generate-resume] wrote public/${fileName}`)

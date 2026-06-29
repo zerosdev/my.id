@@ -29,7 +29,7 @@ useHead({
             :key="item.name"
             class="flex items-start gap-3 py-1 px-0"
           >
-            <p class="font-bold text-sm">
+            <p class="font-bold text-sm text-nowrap">
               {{ item.type }} —
             </p>
             <p class="text-muted text-sm">
