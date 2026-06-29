@@ -13,7 +13,7 @@
     "phone": "+6285338340449",
     "whatsapp": "+6285338340449",
     "telegram": "ronywisnuwardana",
-    "resumeUrl": "/resume.pdf"
+    "resumeUrl": ""
   },
   "social": [
     {
@@ -415,7 +415,7 @@
       "items": [
         {
           "type": "Laptop",
-          "name": "Macbook Air M1, Asus X409DA"
+          "name": "Macbook Air M1 8GB RAM/256GB NVMe | Asus M409DA 8GB RAM, 256GB NVMe, 1TB HDD"
         },
         {
           "type": "Monitor",
@@ -473,11 +473,11 @@
         },
         {
           "type": "Shell",
-          "name": "Git Bash, Zsh"
+          "name": "Git Bash | Zsh"
         },
         {
           "type": "Version Control",
-          "name": "Github, Gitlab"
+          "name": "Github | Gitlab"
         },
         {
           "type": "Browser",
@@ -485,7 +485,7 @@
         },
         {
           "type": "AI Assisted Coding",
-          "name": "Claude Code, ChatGPT"
+          "name": "Claude Code | ChatGPT"
         }
       ]
     }
