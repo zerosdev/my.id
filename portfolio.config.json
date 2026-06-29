@@ -107,13 +107,13 @@
     {
       "date": "Jan 2017 - May 2023",
       "title": "Full Stack Developer",
-      "company": "PT Trijaya Digital Grup",
+      "company": "PT. Trijaya Digital Grup",
       "location": "Ngawi, Indonesia",
       "employment_type": "Full-Time",
-      "description": "Full Stack Developer with 6+ years of experience in web development, backend architecture, infrastructure, and security. Successfully handled critical security incidents, mitigated large-scale DDoS attacks, and contributed to the recovery of production systems serving financial technology operations.",
+      "description": "Full Stack Developer with 7+ years of experience in web development, backend architecture, infrastructure, and security. Successfully handled critical security incidents, mitigated large-scale DDoS attacks, and contributed to the recovery of production systems serving financial technology operations.",
       "icon": "i-lucide-briefcase",
       "highlights": [
-        "6+ years developing and maintaining scalable web applications using Laravel, Vue.js, and Nuxt.js",
+        "7+ years developing and maintaining scalable web applications using Laravel, Vue.js, and Nuxt.js",
         "Designed and integrated RESTful APIs with banking systems, payment gateways, SMS gateways, and e-KYC providers.",
         "Improved application performance through database optimization, indexing, and query tuning.",
         "Managed Linux server infrastructure, security hardening, Cloudflare, DDoS protection, and load balancing.",
@@ -219,6 +219,10 @@
           "icon": "i-devicon-bootstrap"
         },
         {
+          "name": "jQuery",
+          "icon": "i-devicon-jquery"
+        },
+        {
           "name": "Tailwind CSS",
           "icon": "i-devicon-tailwindcss"
         },
@@ -266,6 +270,26 @@
         {
           "name": "Websocket",
           "icon": "i-logos-websocket"
+        },
+        {
+          "name": "FrankenPHP",
+          "icon": "i-devicon-frankenphp"
+        },
+        {
+          "name": "MariaDB",
+          "icon": "i-devicon-mariadb"
+        },
+        {
+          "name": "MySQL",
+          "icon": "i-devicon-mysql"
+        },
+        {
+          "name": "Redis",
+          "icon": "i-devicon-redis"
+        },
+        {
+          "name": "PostgreSQL",
+          "icon": "i-devicon-postgresql"
         }
       ]
     },
@@ -342,26 +366,6 @@
           "icon": "i-devicon-amazonwebservices"
         },
         {
-          "name": "FrankenPHP",
-          "icon": "i-devicon-frankenphp"
-        },
-        {
-          "name": "MariaDB",
-          "icon": "i-devicon-mariadb"
-        },
-        {
-          "name": "MySQL",
-          "icon": "i-devicon-mysql"
-        },
-        {
-          "name": "Redis",
-          "icon": "i-devicon-redis"
-        },
-        {
-          "name": "PostgreSQL",
-          "icon": "i-devicon-postgresql"
-        },
-        {
           "name": "Proxmox",
           "icon": "i-devicon-proxmox-wordmark"
         }
@@ -405,6 +409,10 @@
         {
           "name": "Trello",
           "icon": "i-devicon-trello"
+        },
+        {
+          "name": "Postman",
+          "icon": "i-devicon-postman"
         }
       ]
     }
@@ -415,7 +423,7 @@
       "items": [
         {
           "type": "Laptop",
-          "name": "Macbook Air M1 8GB RAM/256GB NVMe | Asus M409DA 8GB RAM, 256GB NVMe, 1TB HDD"
+          "name": "Macbook Air M1 / Asus M409DA"
         },
         {
           "type": "Monitor",
@@ -473,11 +481,11 @@
         },
         {
           "type": "Shell",
-          "name": "Git Bash | Zsh"
+          "name": "Git Bash / Zsh"
         },
         {
           "type": "Version Control",
-          "name": "Github | Gitlab"
+          "name": "Github / Gitlab"
         },
         {
           "type": "Browser",
@@ -485,7 +493,7 @@
         },
         {
           "type": "AI Assisted Coding",
-          "name": "Claude Code | ChatGPT"
+          "name": "Claude Code / ChatGPT"
         }
       ]
     }

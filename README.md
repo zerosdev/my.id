@@ -17,25 +17,27 @@ Everything you need to make this your own lives in three places:
 
 ### 1. Content — `portfolio.config.json`
 
-All page content (profile, social links, nav, experience, projects, skills) lives in this single JSON file at the project root. It's committed to the repo, since it's public-facing portfolio content rather than a secret — if you fork this template, just edit it in place with your own data.
+All page content (profile, social links, experience, projects, skills) lives in this single JSON file at the project root. It's committed to the repo, since it's public-facing portfolio content rather than a secret — if you fork this template, just edit it in place with your own data.
 
 Edit `portfolio.config.json` directly. The shape of each section is defined in `app/data/types.ts`; `app/data/index.ts` just reads from the config and shouldn't need editing.
 
-| Config key   | What it controls                            |
-| ------------ | ------------------------------------------- |
-| `profile`    | Name, role, bio, avatar, email, resume link |
-| `social`     | Social links shown in the header/footer     |
-| `navLinks`   | Header navigation items                     |
-| `experience` | Work experience timeline + achievements     |
-| `projects`   | Project cards                               |
-| `skills`     | Tech stack badges, grouped by category      |
+| Config key   | What it controls                                                   |
+| ------------ | ------------------------------------------------------------------ |
+| `profile`    | Name, role, bio, avatar, email, resume link                        |
+| `social`     | Social links shown in the header/footer                            |
+| `experience` | Work experience timeline + achievements                            |
+| `projects`   | Project cards — homepage shows the latest 3, `/projects` shows all |
+| `skills`     | Tech stack badges, grouped by category                             |
+| `uses`       | Day-to-day tools/gear list, shown on `/uses`                       |
 
 Replace the placeholder assets referenced in `portfolio.config.json`:
 
 - `public/avatar.jpg` — your profile photo
 - `public/projects/*.png` — project screenshots
 
-`public/resume.pdf` doesn't need to be supplied — `scripts/generate-resume.mjs` auto-generates (and overwrites) it from `portfolio.config.json` on every `pnpm dev`/`build`/`generate` run, using a single-column, ATS-friendly layout (profile, summary, experience, skills, projects). It's gitignored since it's a build artifact, not a source file. To change its design, edit that script's `docDefinition`.
+A resume PDF doesn't need to be supplied — `scripts/generate-resume.mjs` auto-generates (and overwrites) `public/{name} - {roles}.pdf` from `portfolio.config.json` on every `pnpm dev`/`build`/`generate` run, using a single-column, ATS-friendly layout (profile, summary, experience, skills, projects). It's gitignored since it's a build artifact, not a source file. To change its design, edit that script's `docDefinition`.
+
+`profile.resumeUrl` in the config controls where the "Download CV" links point: leave it empty (or any local path) and it's auto-derived to match the generated filename above; set it to an `http(s)://` URL to point at an externally hosted resume instead. Either way, the stable `/download` route (a `routeRules` redirect in `nuxt.config.ts`) always 302s to the current `resumeUrl` — share that link instead of the generated filename, since it changes whenever `name`/`roles` change.
 
 `public/favicon.ico` is also auto-generated the same way — `scripts/generate-favicon.mjs` derives initials from `profile.name` (e.g. "Rony Wisnu Wardana" → "RWW") and renders them on a gradient square. It's gitignored too; tweak the colors/gradient directly in that script.
 

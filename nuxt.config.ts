@@ -1,3 +1,5 @@
+import { profile } from './app/data'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -16,6 +18,10 @@ export default defineNuxtConfig({
     families: [
       { name: 'Geist Mono', provider: 'fontsource' }
     ]
+  },
+
+  routeRules: {
+    '/download': { redirect: { to: profile.resumeUrl, statusCode: 302 } }
   },
 
   nitro: {
