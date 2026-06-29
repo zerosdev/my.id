@@ -25,11 +25,11 @@ import { experience, profile, projects, skills } from '~/data'
       </template>
 
       <template #title>
-        Hey, I'm <span class="text-orange-400 dark:text-orange-300">{{ profile.name }}</span><span class="inline-block">👋</span>
+        Hey, I'm <span class="text-orange-400">{{ profile.name }}</span> <span class="inline-block">👋</span>
       </template>
 
       <template #description>
-        A <span class="text-highlighted">{{ profile.role }}</span> based in <span class="text-highlighted">{{ profile.location }}</span>. {{ profile.bio }}
+        A <span class="text-highlighted">{{ formatRoles(profile.roles) }}</span> based in <span class="text-highlighted">{{ profile.location }}</span>. {{ profile.bio }}
       </template>
 
       <div class="flex justify-center lg:justify-end">
@@ -51,12 +51,10 @@ import { experience, profile, projects, skills } from '~/data'
     <UPageSection
       id="skills"
       title="Skills"
-      description="The technologies, tools, languages, frameworks or libraries I work with. Not a complete list — I'm always open to learn new things"
+      description="The technologies, tools, programming languages, frameworks or libraries I work with. Not a complete list — I'm always open to learn new things"
       :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'font-light text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
-      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
-        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
-      </svg>
+      <ContentSeparator />
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
         <div v-for="group in skills" :key="group.category">
           <h3 class="font-semibold mb-3">
@@ -83,9 +81,7 @@ import { experience, profile, projects, skills } from '~/data'
       description="My professional journey so far."
       :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
-      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
-        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
-      </svg>
+      <ContentSeparator />
       <UTimeline :items="experience">
         <template #title="{ item }">
           <p class="font-semibold text-md">
@@ -119,9 +115,7 @@ import { experience, profile, projects, skills } from '~/data'
       description="A selection of things I've built."
       :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
-      <svg width="150" height="16" viewBox="0 0 150 16" fill="none" aria-hidden="true" class="block mb-3">
-        <path d="M3 8 Q 9 1.5, 15 8 T 27 8 T 39 8 T 51 8 T 63 8 T 75 8 T 87 8 T 99 8 T 111 8 T 123 8 T 135 8 T 147 8" stroke="var(--color-orange-300)" stroke-width="3.5" stroke-linecap="round" fill="none" />
-      </svg>
+      <ContentSeparator />
       <UPageGrid>
         <UPageCard
           v-for="project in projects"

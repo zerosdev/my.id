@@ -1,6 +1,6 @@
 export interface Profile {
   name: string
-  role: string
+  roles: string[]
   location: string
   headline: string
   bio: string

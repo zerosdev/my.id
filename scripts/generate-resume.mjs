@@ -15,6 +15,11 @@ const contactLine = [profile.email, profile.location, ...social.map((s) => s.to)
   .filter(Boolean)
   .join('   |   ')
 
+function formatRoles(roles) {
+  if (roles.length <= 1) return roles[0] ?? ''
+  return `${roles.slice(0, -1).join(', ')} & ${roles[roles.length - 1]}`
+}
+
 const docDefinition = {
   pageMargins: [40, 40, 40, 40],
   defaultStyle: { font: 'Helvetica', fontSize: 10, lineHeight: 1.25 },
@@ -32,7 +37,7 @@ const docDefinition = {
   // so ATS parsers read the text in the correct order.
   content: [
     { text: profile.name, style: 'name' },
-    { text: profile.role, style: 'role' },
+    { text: formatRoles(profile.roles), style: 'role' },
     { text: contactLine, style: 'contact' },
 
     { text: 'Summary', style: 'sectionTitle' },

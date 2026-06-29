@@ -1,10 +1,13 @@
 {
   "profile": {
     "name": "Rony Wisnu Wardana",
-    "role": "Full Stack Software Engineer / QA Automation Engineer",
+    "roles": [
+      "Full Stack Software Engineer",
+      "QA Automation Engineer"
+    ],
     "location": "Solo, Indonesia",
     "headline": "Open to Work",
-    "bio": "8+ years of experience building and maintaining scalable web applications, automation systems, and production infrastructure. Skilled in Laravel, Vue.js, Nuxt.js, TypeScript, and Node.js, with a focus on performance, system reliability, security, and long-term maintainability.",
+    "bio": "9+ years of experience building and maintaining scalable web applications, automation systems, and production infrastructure. Skilled in Laravel, Vue.js, Nuxt.js, TypeScript, and Node.js, with a focus on performance, system reliability, security, and long-term maintainability.",
     "avatar": "https://avatars.githubusercontent.com/u/33526722?v=4",
     "email": "ronywisnuwardana@gmail.com",
     "phone": "+6285338340449",
@@ -412,7 +415,7 @@
       "items": [
         {
           "type": "Laptop",
-          "name": "Macbook Air M1, Asus M409DA"
+          "name": "Macbook Air M1, Asus X409DA"
         },
         {
           "type": "Monitor",
@@ -432,7 +435,7 @@
         },
         {
           "type": "Audio",
-          "name": "Integrated Speaker, Maiket Bluetooth Soundbar"
+          "name": "Maiket Bluetooth Soundbar"
         },
         {
           "type": "Microphones",
@@ -456,8 +459,8 @@
           "name": "Homedoki"
         },
         {
-          "type": "ISP",
-          "name": "Yamnet 50 Mbps"
+          "type": "ISP Speed",
+          "name": "50 Mbps"
         }
       ]
     },
@@ -474,7 +477,7 @@
         },
         {
           "type": "Version Control",
-          "name": "Git"
+          "name": "Github, Gitlab"
         },
         {
           "type": "Browser",
