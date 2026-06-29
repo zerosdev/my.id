@@ -49,6 +49,18 @@ Nuxt UI's color palette (`primary`, `neutral`) is configured here. See the [Nuxt
 
 Font family is set via the `--font-sans` CSS variable here (currently Geist Mono, loaded through `@nuxt/fonts`). Change it to any font name and the module will fetch it automatically.
 
+### 4. Analytics — Google Analytics 4
+
+CV download clicks (hero and footer CTA buttons) are tracked as a `download_cv` GA4 event via [`@nuxt/scripts`](https://scripts.nuxt.com), through the `useAnalytics()` composable in `app/composables/useAnalytics.ts`.
+
+To enable it, set your GA4 Measurement ID as an environment variable (copy `.env.example` to `.env` locally, and add the same variable in your Cloudflare Workers project settings for production):
+
+```bash
+NUXT_PUBLIC_SCRIPTS_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX
+```
+
+Leave it unset and the script still loads but is never configured with a property ID, so no events reach a GA4 account.
+
 ## Deployment
 
 This project is preconfigured for Cloudflare Workers (see `wrangler.jsonc` and the `cloudflare_module` Nitro preset in `nuxt.config.ts`).
