@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { experience, profile, projects, skills } from '~/data'
+
+const latestProjects = projects.slice(0, 3)
 </script>
 
 <template>
@@ -15,7 +17,7 @@ import { experience, profile, projects, skills } from '~/data'
       ]"
     >
       <template #headline>
-        <UBadge color="success" variant="outline" size="sm" class="gap-1.5 rounded-full">
+        <UBadge v-if="profile.headline" color="success" variant="outline" size="sm" class="gap-1.5 rounded-full">
           <span class="relative flex size-2">
             <span class="absolute inline-flex size-full animate-ping rounded-full bg-green-400 opacity-75" />
             <span class="relative inline-flex size-2 rounded-full bg-green-500" />
@@ -52,7 +54,7 @@ import { experience, profile, projects, skills } from '~/data'
       id="skills"
       title="Skills"
       description="The technologies, tools, programming languages, frameworks or libraries I work with. Not a complete list — I'm always open to learn new things"
-      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'font-light text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'font-light text-left text-base text-wrap sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
       <ContentSeparator />
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
@@ -78,8 +80,8 @@ import { experience, profile, projects, skills } from '~/data'
     <UPageSection
       id="experience"
       title="Experience"
-      description="My professional journey so far."
-      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
+      description="A look at the companies I've worked with, the products I've built, and the impact I've made."
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'font-light text-left text-base text-wrap sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
       <ContentSeparator />
       <UTimeline :items="experience">
@@ -113,34 +115,25 @@ import { experience, profile, projects, skills } from '~/data'
       id="projects"
       title="Projects"
       description="A selection of things I've built."
-      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
+      :ui="{ title: 'text-left sm:text-3xl lg:text-3xl', description: 'text-left text-base sm:text-base text-wrap lg:text-base max-w-[80ch]', container: 'sm:gap-5' }"
     >
       <ContentSeparator />
       <UPageGrid>
-        <UPageCard
-          v-for="project in projects"
+        <ProjectCard
+          v-for="project in latestProjects"
           :key="project.title"
-          :title="project.title"
-          :description="project.description"
-          :to="project.link"
-          target="_blank"
-          spotlight
-          :ui="{ title: 'text-black dark:text-white underline decoration-orange-300 underline-offset-4' }"
-        >
-          <template #footer>
-            <div class="flex flex-wrap gap-2">
-              <UBadge
-                v-for="tag in project.tags"
-                :key="tag"
-                :label="tag"
-                color="neutral"
-                variant="subtle"
-                size="sm"
-              />
-            </div>
-          </template>
-        </UPageCard>
+          :project="project"
+        />
       </UPageGrid>
+      <div class="flex justify-center">
+        <UButton
+          label="View All Projects"
+          to="/projects"
+          color="neutral"
+          variant="subtle"
+          trailing-icon="i-lucide-arrow-right"
+        />
+      </div>
     </UPageSection>
   </div>
 </template>

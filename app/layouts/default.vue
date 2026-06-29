@@ -20,7 +20,7 @@ const navLinks: NavLink[] = [
   },
   {
     label: "Projects",
-    to: "/#projects"
+    to: "/projects"
   },
   {
     label: "Contact",
@@ -62,7 +62,7 @@ ctaButtons.push({ label: 'Download CV', to: profile.resumeUrl, target: '_blank',
           :items="navLinks.map((link) => ({ label: link.label, to: link.to, exactHash: true }))"
           variant="link"
           class="hidden lg:flex"
-          :ui="{ link: 'uppercase text-[.8rem]' }"
+          :ui="{ link: 'uppercase text-[.8rem] font-bold' }"
         />
 
       <template #right>

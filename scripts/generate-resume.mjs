@@ -11,7 +11,7 @@ pdfMake.setFonts(fontsModule.default || fontsModule)
 pdfMake.setUrlAccessPolicy(() => false)
 pdfMake.setLocalAccessPolicy(() => true)
 
-const contactLine = [profile.email, profile.location, ...social.map((s) => s.to)]
+const contactLine = [profile.location, profile.email, profile.phone, ...social.map((s) => s.to)]
   .filter(Boolean)
   .join('   |   ')
 
@@ -22,6 +22,7 @@ function formatRoles(roles) {
 
 function sanitizeFilename(value) {
   return value
+    // eslint-disable-next-line no-control-regex -- strip Windows-reserved chars + control chars from filenames
     .replace(/[<>:"/\\|?*\x00-\x1F]/g, '-')
     .replace(/\s+/g, ' ')
     .trim()
@@ -50,18 +51,6 @@ const docDefinition = {
     { text: 'Summary', style: 'sectionTitle' },
     { text: profile.bio },
 
-    { text: 'Experience', style: 'sectionTitle' },
-    ...experience.map((item) => ({
-      stack: [
-        { text: `${item.title} — ${item.company}`, style: 'itemTitle' },
-        { text: `${item.location} • ${item.employment_type}`, style: 'itemMeta' },
-        { text: item.date, style: 'itemMeta' },
-        { text: item.description, margin: [0, 0, 0, 3] },
-        ...(item.highlights ?? []).map((highlight) => ({ text: `•  ${highlight}`, style: 'bullet' }))
-      ],
-      margin: [0, 0, 0, 12]
-    })),
-
     { text: 'Skills', style: 'sectionTitle' },
     ...skills.map((group) => ({
       text: [
@@ -69,6 +58,17 @@ const docDefinition = {
         group.items.map((item) => item.name).join(', ')
       ],
       margin: [0, 0, 0, 4]
+    })),
+
+    { text: 'Experience', style: 'sectionTitle' },
+    ...experience.map((item) => ({
+      stack: [
+        { text: `${item.title} — ${item.company}`, style: 'itemTitle' },
+        { text: `${item.date} • ${item.location} • ${item.employment_type}`, style: 'itemMeta' },
+        { text: item.description, margin: [0, 0, 0, 3] },
+        ...(item.highlights ?? []).map((highlight) => ({ text: `•  ${highlight}`, style: 'bullet' }))
+      ],
+      margin: [0, 0, 0, 12]
     })),
 
     ...(projects?.length

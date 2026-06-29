@@ -16,6 +16,8 @@ pnpm cf:preview    # build + wrangler dev (local Workers runtime preview)
 
 No test suite or lint script is configured. `@nuxt/eslint` is wired into `eslint.config.mjs` but there's no `lint` script — run `eslint .` directly if needed.
 
+Before running `pnpm dev`, check whether a dev server is already running on port 3000 (e.g. `curl -s -o /dev/null -w '%{http_code}' http://localhost:3000/`, or Nuxt's own lock-file error naming the PID) — Nuxt refuses to start a second instance in the same dir anyway. If one is already up, use it directly instead of starting a new one.
+
 ## Architecture
 
 This is a single-page Nuxt 4 portfolio (Nuxt UI + Tailwind v4) deployed as a Cloudflare Worker (`wrangler.jsonc`, Nitro `cloudflare_module` preset). All page content lives in one place and flows through a build-time pipeline before it ever reaches a `.vue` file:
