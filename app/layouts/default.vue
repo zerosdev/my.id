@@ -2,7 +2,7 @@
 import { profile, social } from '~/data'
 import type { NavLink } from '~/data/types';
 useHead({
-  titleTemplate: (chunk?: string) => (chunk ? `${chunk} — ${profile.name}` : `${profile.name} — ${profile.role}`),
+  titleTemplate: (chunk?: string) => (chunk ? `${chunk} — ${profile.name}` : `${profile.name} — ${formatRoles(profile.roles)}`),
 })
 
 const navLinks: NavLink[] = [
@@ -34,6 +34,21 @@ const initials = computed(() => profile.name
   .map((word) => word[0])
   .join('')
   .toUpperCase())
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const ctaButtons: any[] = [
+  { to: `mailto:${profile.email}`, target: '_blank', icon: 'i-lucide-mail', color: 'neutral' }
+]
+
+if (profile.whatsapp) {
+  ctaButtons.push({ to: `https://wa.me/${profile.whatsapp}`, target: '_blank', icon: 'i-uil-whatsapp', color: 'neutral' })
+}
+
+if (profile.telegram) {
+  ctaButtons.push({ to: `https://t.me/${profile.telegram}`, target: '_blank', icon: 'i-uil-telegram', color: 'neutral' })
+}
+
+ctaButtons.push({ label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' })
 </script>
 
 <template>
@@ -43,13 +58,14 @@ const initials = computed(() => profile.name
         {{ initials }}
       </template>
 
-      <template #right>
-        <UNavigationMenu
+      <UNavigationMenu
           :items="navLinks.map((link) => ({ label: link.label, to: link.to, exactHash: true }))"
           variant="link"
           class="hidden lg:flex"
           :ui="{ link: 'uppercase text-[.8rem]' }"
         />
+
+      <template #right>
         <UColorModeButton />
         <UButton
           v-for="item in social"
@@ -79,12 +95,7 @@ const initials = computed(() => profile.name
         id="contact"
         title="Let's build something great together!"
         description="I'm currently available for freelance projects and exciting opportunities. If you have an idea, project, or role in mind, I'd love to hear from you."
-        :links="[
-          { to: `mailto:${profile.email}`, icon: 'i-lucide-mail', color: 'neutral' },
-          { to: `https://wa.me/${profile.whatsapp}`, icon: 'i-uil-whatsapp', color: 'neutral' },
-          { to: `https://t.me/${profile.telegram}`, icon: 'i-uil-telegram', color: 'neutral' },
-          { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
-        ]"
+        :links="ctaButtons"
         variant="subtle"
       />
 
@@ -93,7 +104,7 @@ const initials = computed(() => profile.name
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          © {{ new Date().getFullYear() }} {{ profile.name }}. Powered by <a href="https://nuxt.com" rel="nofollow, noopener" class="text-black dark:text-white underline decoration-orange-300 underline-offset-4">Nuxt 4</a> & <a href="https://cloudflare.com" rel="nofollow, noopener" class="text-black dark:text-white underline decoration-orange-300 underline-offset-4">Cloudflare Workers</a>
+          © {{ new Date().getFullYear() }} {{ profile.name }}. Powered by <a href="https://nuxt.com" target="_blank" rel="nofollow, noopener" class="text-black dark:text-white underline decoration-orange-300 underline-offset-4">Nuxt 4</a> & <a href="https://cloudflare.com" target="_blank" rel="nofollow, noopener" class="text-black dark:text-white underline decoration-orange-300 underline-offset-4">Cloudflare Workers</a>
         </p>
       </template>
 
