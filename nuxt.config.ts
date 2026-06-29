@@ -33,7 +33,7 @@ export default defineNuxtConfig({
 
   scripts: {
     registry: {
-      googleAnalytics: true
+      googleAnalytics: { trigger: 'onNuxtReady' }
     }
   },
 
