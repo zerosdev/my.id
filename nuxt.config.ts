@@ -9,15 +9,32 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/image',
+    '@nuxt/scripts',
     '@nuxt/ui'
   ],
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    public: {
+      scripts: {
+        googleAnalytics: {
+          id: ''
+        }
+      }
+    }
+  },
+
   fonts: {
     families: [
       { name: 'Geist Mono', provider: 'fontsource' }
     ]
+  },
+
+  scripts: {
+    registry: {
+      googleAnalytics: true
+    }
   },
 
   routeRules: {

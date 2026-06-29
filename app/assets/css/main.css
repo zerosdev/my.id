@@ -20,7 +20,7 @@ body {
 
 header [data-slot="link"][data-active],
 [data-slot="body"] [data-slot="link"][data-active] {
-  color: var(--color-orange-300);
+  color: var(--color-orange-400);
 }
 
 html {

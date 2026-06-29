@@ -48,7 +48,9 @@ if (profile.telegram) {
   ctaButtons.push({ to: `https://t.me/${profile.telegram}`, target: '_blank', icon: 'i-uil-telegram', color: 'neutral' })
 }
 
-ctaButtons.push({ label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' })
+const { trackEvent } = useAnalytics()
+
+ctaButtons.push({ label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle', onClick: () => trackEvent('download_cv', { location: 'cta' }) })
 </script>
 
 <template>

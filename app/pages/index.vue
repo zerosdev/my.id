@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { experience, profile, projects, skills } from '~/data'
 
+const { trackEvent } = useAnalytics()
 const latestProjects = projects.slice(0, 3)
 </script>
 
@@ -13,7 +14,7 @@ const latestProjects = projects.slice(0, 3)
       :ui="{ title: 'text-3xl sm:text-3xl lg:text-3xl', description: 'text-base sm:text-base lg:text-base' }"
       :links="[
         { label: 'View Projects', to: '#projects', color: 'neutral' },
-        { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle' }
+        { label: 'Download CV', to: profile.resumeUrl, target: '_blank', color: 'neutral', variant: 'subtle', onClick: () => trackEvent('download_cv', { location: 'hero' }) }
       ]"
     >
       <template #headline>

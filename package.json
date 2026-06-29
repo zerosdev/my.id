@@ -17,6 +17,7 @@
     "@nuxt/eslint": "1.16.0",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/image": "2.0.0",
+    "@nuxt/scripts": "^1.2.1",
     "@nuxt/ui": "4.9.0",
     "@tiptap/core": "^3.27.1",
     "@tiptap/extension-bubble-menu": "^3.27.1",
